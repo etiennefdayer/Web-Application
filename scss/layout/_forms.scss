@@ -1,0 +1,122 @@
+// ============
+// Form Styles
+// ===========
+
+// ---------Forms ----------
+
+form {
+  @include display-flex();
+  flex-direction:column;
+  flex:1;
+  height:260px;
+}
+
+
+
+// --------User Message ----------
+
+#message-form {
+  *  {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #message-user {
+    flex-shrink: 1;
+
+  }
+
+  button#send-btn {
+    flex-shrink: 0;
+    margin: auto 0 0;
+  }
+}
+
+
+.message-sent {
+
+  height: 50px;
+  @incldue font-settings(1rem,300, $color-text-inv-light);
+  line-height: 1.2rem;
+  border-radius: 4px;
+  background-color: $amazon;
+  border: $border;
+  padding: 6px 15px 4px;
+  margin-bottom : 20px !important;
+}
+
+
+
+
+.message-error {
+  height: 50px;
+  @include font-settings(1rem,300, $color-text-inv-light);
+  line-height: 1.2rem;
+  border-radius: 4px;
+  background-color: $amazon;
+  border: $border;
+  padding: 6px 15px 4px;
+  margin-bottom : 20px !important;
+  background-color: $color-error;
+}
+
+
+// ---------Settings ------------
+
+#settings-form {
+  p {
+    font-weight: 500;
+    width: 190px;
+  }
+
+button {
+  width: 48%;
+}
+
+}
+
+.select-timezone-container {
+  position: relative;
+  background-color: $smoke-white;
+  @include display-flex (flex-end,center);
+  z-index: 10;
+  margin-top: 10px;
+  #select-timezone {
+    width: 100%;
+    background-color: transparent;
+    padding-right: 30px;
+  }
+
+  img#arrow-down {
+    position:absolute;
+    z-index:-10;
+    width: 28px;
+    height:28px;
+    margin-left: -5px;
+  }
+}
+
+
+
+// -------Form buttons ----------
+
+
+.form-btn {
+  height:48px;
+  text-transform:uppercase;
+  background-color: $color-header;
+  padding-top:2px;
+  font-size:1rem;
+  &:active {
+    color:$color-text-inv-light;
+    background-color: $color-nav;
+  }
+  &#reset-btn {
+    color: $color-text-inv-light;
+    background-color: lighten($color-text,15%);
+    &:active {
+      color:$color-text-inv-light;
+      background-color: lighten($color-text,15%);
+    }
+  }
+}

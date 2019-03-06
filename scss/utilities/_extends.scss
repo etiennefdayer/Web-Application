@@ -1,0 +1,32 @@
+// Font Family //
+
+%font-primary {
+  font-family: $stack-catamaran;
+}
+
+
+// Inputs //
+
+%focus-state-input {
+  &:focus {
+    box-shadow: inset 0 0 5px $yankees-blue;
+  }
+}
+
+
+
+// Buttons
+
+%focus-state-btn {
+  &:focus {
+    box-shadow: 0 0 5px 1px $yankees-blue;
+  }
+}
+
+
+// Transitions
+
+%transition-state {
+  outline:none;
+  transition: box-shadow .4s ease-out, background-color .4s ease-out;
+}

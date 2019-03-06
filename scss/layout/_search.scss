@@ -1,0 +1,48 @@
+// ===================
+// Search Container Style
+// ====================
+
+#page-title {
+  @include font-settings(1.1rem,400);
+  line-height: 64px;
+  width: 95px;
+  border-right: $border;
+  @include tablet {
+    @include font-settings(1.4rem,400);
+    width: 120px
+  }
+}
+
+.search-container {
+  position: relative;
+  @include display-flex(flex-end,center);
+  width: calc(100% - 95px + #{$mobile-edge});
+  height: 64px;
+  background-color: $color-tab;
+  margin-right: -#{$mobile-edge};
+  padding-right: $mobile-edge;
+  border-bottom: $border;
+  @include tablet {
+    width: calc(100% - 120px + #{$tablet-edge});
+    margin-right: -#{$tablet-edge};
+    padding-right: $tablet-edge;
+
+
+  }
+  #search {
+    width: 75%;
+    max-width: 400px;
+    }
+
+    #search-btn {
+      position: absolute;
+      width: 40px;
+      margin-left: -3px;
+      background-color: #F5F5F5;
+      height: 20px;
+      border-radius: 1px;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+}

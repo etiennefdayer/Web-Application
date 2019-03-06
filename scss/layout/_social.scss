@@ -1,0 +1,57 @@
+// ---- Logo ---- //
+
+
+.social-logo {
+background-color: $color-header;
+width: 72px;
+height: 72px;
+padding: 16px;
+border: $border;
+border-radius: 50%;
+img {
+  width: 36px;
+  height: 36px;
+}
+#facebook-logo {
+  transform: scale(1.25)
+  }
+}
+
+
+// -- Stats --- //
+
+.social-stats {
+  @include display-flex(center);
+  flex-direction: column;
+  font-weight: 500;
+  margin-left: 15px;
+
+.social-network {
+  font-size:1.1rem;
+  line-height: 1.1rem;
+  color: $color-header;
+  @include tablet {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+
+  @include desktop {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+  }
+}
+
+
+.social-numbers {
+  @include font-settings(2rem, 100);
+  line-height: 2rem;
+  @include tablet {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+  @include desktop {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    }
+  }
+}

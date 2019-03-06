@@ -1,0 +1,23 @@
+// Main Styles //
+
+// Main
+main {
+  width: 100%;
+  background: $smoke-white;
+  transform: translateX(0);
+  transition: transform .5s;
+  padding-bottom: 50px;
+  &.slide-right {
+    transform: translateX(72px);
+  }
+}
+
+
+.section-title {
+  @include font-settings(1rem,500);
+  text-transform: uppercase;
+  padding: 20px;
+  @include tablet {
+    padding: 25px $tablet-edge 0;
+  }
+}

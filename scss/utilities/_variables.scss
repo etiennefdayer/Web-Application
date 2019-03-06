@@ -1,0 +1,45 @@
+// Color variables (descriptive)
+$alabaster : #f5f2e6;
+$deep-space: #3e5c76;
+$yankees-blue: #1d2d44;
+$mercury: #e7e7e7;
+$emperor: #505050;
+$light-gray: #d3d3d3;
+$smoke-white: #f5f5f5;
+$bermuda-gray: #748cab;
+$forest-green: #1fad3b;
+$amazon: #327c5e;
+$maroon-flush: #ad1f4a;
+
+// Color variables (functional)
+$color-background: $alabaster;
+$color-header: $deep-space;
+$color-nav: $yankees-blue;
+$color-tab: $mercury;
+$color-text:  $emperor;
+$color-text-inv-dark: $light-gray;
+$color-text-inv-light:  $smoke-white;
+$color-border: $bermuda-gray;
+$color-btn-state:  $forest-green;
+$color-success: $forest-green;
+$color-error: $maroon-flush;
+$color-link-active:  $alabaster;
+$stack-catamaran: 'Catamaran', sans-serif;
+
+// Box Shadow
+$shadow: 0 0 70px 0 rgba($emperor, 0.3);
+
+// Margin & Padding
+$mobile-edge: 10px;
+$tablet-edge:  20px;
+
+// Border
+$border-hdr: 1px solid rgba($color-text-inv-dark, 0.7);
+$border-btn: 1px solid rgba($color-nav, 0.7);
+$border: 1px solid rgba($color-border, 0.5);
+
+// Media Query BP
+$mobile-width:  480px;
+$charts-width: 600px;
+$tablet-width: 768px;
+$desktop-width: 1024px;

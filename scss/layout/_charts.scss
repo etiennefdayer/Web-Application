@@ -1,0 +1,76 @@
+// ===========
+// Chart Styles
+// ============
+
+// ---------Canvas ----------
+
+canvas.chart {
+  width: 100% !important;
+  height: 225px !important;
+
+  @include mobile {
+    height: 250px !important;
+  }
+
+  @include tablet {
+    height: 300px !important;
+  }
+}
+
+
+// --------Title -----------
+
+.chart-title {
+  margin-bottom: -10px;
+}
+
+
+
+// --------Line Chart ----------
+
+.line-chart-title {
+  margin-bottom: 5px;
+  @include font-settings(1rem,500);
+  text-transform: uppercase;
+  @include mobile {
+    margin-top: 3px;
+    margin-bottom: 0;
+  }
+}
+
+
+
+.line-chart-options {
+  padding: 20px $mobile-edge 0;
+  margin-bottom: -10px;
+  @include mobile {
+    @include display-flex(space-between);
+    padding: 20px $mobile-edge 0;
+  }
+  @include tablet {
+    padding: 25px $tablet-edge 0;
+  }
+}
+
+.line-chart-timescale {
+  @include display-flex(flex-end);
+  position:relative;
+  z-index:100;
+button {
+  @extend %focus-state-btn;
+  width: 68px;
+  height:26px;
+  background-color: $color-header;
+  border-radius: 15px;
+  margin: 5px 6px;
+  font-size: 12px;
+  padding-top: 1px;
+  &.active {
+    color: $color-text-inv-light;
+    background-color: $color-btn-state;
+  }
+
+}
+
+
+}

@@ -1,0 +1,20 @@
+// Navigation Style //
+
+// ---- Navigation --- //
+
+nav {
+  position: absolute;
+  width: 72px;
+  padding-top: 10px;
+  a.nav-links {
+  @include icon-link(64px, 64px, 12px 4px, 16px);
+}
+
+a.selected {
+  border-left: 3px solid lime;
+  padding-left: 13px;
+}
+@include tablet {
+  position: relative;
+}
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WebApp Dashboard</title>
+    <meta name="author" content="Etienne Dayer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,300,400,500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/toggle-switch.css">
+    <link rel="stylesheet" type="text/css" href="css/application.css">
+</head>
+<body>
+
+<header>
+  <div id="menu">
+    <a href="#" id="menu-arrow">
+      <svg id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve">
+      <path class="inline-svg" d="M21.698,15.286l-9.002-8.999  c-0.395-0.394-1.035-0.394-1.431,0c-0.395,0.394-0.395,1.034,0,1.428L19.553,16l-8.287,8.285c-0.395,0.394-0.395,1.034,0,1.429  c0.395,0.394,1.036,0.394,1.431,0l9.002-8.999C22.088,16.325,22.088,15.675,21.698,15.286z"/>
+      </svg>
+    </a>
+    <div class="vertical-line"></div>
+    <h1 id="company"><strong>WEB</strong>analytics<span>&trade;</span></h1>
+    </div>
+  <div id="user">
+    <a href="#" id="user-notice">
+      <svg id="bell" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         viewBox="-2 -2 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+         <path class="inline-svg" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
+           c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
+        <circle id="new-notification" cx="21" cy="4" r="6" fill="lime"/>
+      </svg>
+    </a>
+    <div class="vertical-line"></div>
+    <img id="user-photo" src="images/member-2.jpg" title="Josh Matthews" alt="user profile image">
+    <p id="user-name"> Josh Matthews</p>
+  </div>
+
+  <div id="user-notifications" style="display:none">
+  <ul>
+    <li class="notification">
+      <p> You have 8 unread messages </p>
+      <button type="button" class="close-btn notification-btn">X</button>
+    </li>
+    <li class="notification">
+      <p> You have 5 new followers </p>
+      <button type="button" class="close-btn notification-btn">X</button>
+    </li>
+    <li class="notification">
+      <p> Your password expires in 8 days </p>
+      <button type="button" class="close-btn notification-btn">X</button>
+    </li>
+  </ul>
+</div>
+</header>
+
+
+
+
+
+
+<div class="outer-container">
+<nav>
+  <ul>
+    <li><a href="index.html" class="nav-links selected"><img src="icons/icon-dashboard.svg" title="Dashboard" alt="link to Dashboard page"></a></li>
+    <li><a href="#" class="nav-links selected"><img src="icons/icon-members.svg" title="Members" alt="link to Members page"></a></li>
+    <li><a href="#" class="nav-links selected"><img src="icons/icon-visits.svg" title="Visits" alt="link to Visits page"></a></li>
+    <li><a href="#" class="nav-links selected"><img src="icons/icon-settings.svg" title="Settings" alt="link to Settings page"></a></li>
+  </ul>
+</nav>
+
+
+<main>
+  <div class="title-container">
+    <h2 id="page-title">Dashboard</h2>
+    <div class="search-container">
+      <input type="search" id="search" name="search" placeholder="Search">
+      <button type="button" id="search-btn" name="search-btn">
+        <img src="icons/icon-search.svg" alt="search button">
+      </button>
+    </div>
+  </div>
+
+  <div class="alert-container" style="display:none">
+    <span id="alert-tag">Alert</span>
+    <p id="alert-message"> Chart data is from Sunday due to a system update that ran overnight.</p>
+    <button type="button" class="close-btn alert-btn">X</button>
+  </div>
+
+  <div class="line-chart-options">
+    <h3 class="line-chart-title">Traffic</h3>
+    <div class="line-chart-timescale">
+      <button type="button" id="hourly-btn" value="hourly" name="hourly-btn">Hourly</button>
+      <button type="button" id="daily-btn" value="daily" name="daily-btn">Daily</button>
+      <button class="active" type="button" id="weekly-btn" value="weekly" name="weekly-btn">Weekly</button>
+      <button type="button" id="monthly-btn" value="monthly" name="monthly-btn">Monthly</button>
+    </div>
+  </div>
+<div class="line-chart-container section-container">
+  <canvas class="line-chart chart"></canvas>
+</div>
+
+
+<div class="supplemental-charts-container">
+  <div>
+  <h3 class="chart-title section-title">Daily Traffic</h3>
+    <div class="bar-chart-container section-container">
+      <canvas class="bar-chart chart"></canvas>
+    </div>
+</div>
+
+
+  <div>
+    <h3 class="chart-title section-title">Mobile Users</h3>
+    <div class="donut-chart-container section-container">
+      <canvas class="donut-chart chart"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="outer-social-container">
+  <h3 class="section-title">Social Stats</h3>
+  <div class="social-stats-container section-container">
+    <div class="inner-social-container">
+      <div class="twitter-container social-container">
+        <div class="social-logo">
+          <img src="icons/icon-twitter.svg" alt="number of Twitter users">
+        </div>
+      <div class="social-stats">
+        <p class="social-network">Twitter</p>
+        <p class="social-numbers">10'345</p>
+      </div>
+    </div>
+
+    <div class="facebook-container social-container">
+      <div class="social-logo">
+        <img src="icons/icon-facebook.svg" alt="number of Facebook users">
+      </div>
+    <div class="social-stats">
+      <p class="social-network">Facebook</p>
+      <p class="social-numbers">8'739</p>
+      </div>
+    </div>
+
+    <div class="google-container social-container">
+      <div class="social-logo">
+        <img src="icons/icon-google-plus.svg" alt="number of Google users">
+      </div>
+    <div class="social-stats">
+      <p class="social-network">Google</p>
+      <p class="social-numbers">2'530</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="outer-users-container clearfix">
+  <div>
+    <h3 class="section-title">New Members</h3>
+    <div class="new-members-container section-container">
+      <ul class="inner-members-container">
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="section-title">Recent Activity</h3>
+    <div class="recent-activity-container section-container">
+      <ul class="inner-activity-container">
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="message-settings-container">
+  <div>
+  <h3 class="section-title">Message User</h3>
+  <div class="message-user-container section-container">
+  <form id="message-form">
+  <input type="text" id="search-user" name="search-user" placeholder="Search for User">
+  <textarea id="message-user" name="message-user" rows="4" placeholder="Message for User"></textarea>
+  <button id="send-btn" class="form-btn" type="submit" name="send-btn">Send</button>
+</form>
+</div>
+</div>
+
+
+<div>
+  <h3 class="section-title"> Settings</h3>
+  <div class="settings-container section-container">
+    <form id="settings-form">
+      <div class="toggle-switch-container">
+        <p>Send Email Notifications</p>
+        <div class="onoffswitch">
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="notification-switch">
+          <label class="onoffswitch-label" for="notification-switch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+      </div>
+    </div>
+    <div class="toggle-switch-container">
+      <p> Set Profile to Public </p>
+      <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="profile-switch">
+        <label  class="onoffswitch-label" for="profile-switch">
+          <span class="onoffswitch-inner"></span>
+          <span class="onoffswitch-switch"></span>
+        </label>
+      </div>
+    </div>
+  <div class="select-timezone-container">
+    <select name="select-timezone" id="select-timezone">
+      <option value="" disabled selected>Select Timezone</option>
+      <option value="0.0">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+      <option value="1.0">(GMT +1:00 hour) Brussels, Copenhagen, Madrid, Paris</option>
+      <option value="2.0">(GMT +2:00) Kaliningrad, South Africa</option>
+      <option value="3.0">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+      <option value="3.5">(GMT +3:30) Tehran</option>
+      <option value="4.0">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+      <option value="4.5">(GMT +4:30) Kabul</option>
+      <option value="5.0">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+      <option value="5.5">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
+      <option value="5.75">(GMT +5:45) Kathmandu</option>
+      <option value="6.0">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+      <option value="7.0">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+      <option value="8.0">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+      <option value="9.0">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+</select>
+
+<img id="arrow-down" src="icons/icon-down.svg" alt="">
+</div>
+<div class="settings-buttons-container">
+  <button id="save-btn" class="form-btn" type="submit" name="save-btn"> Save </button>
+  <button id="reset-btn" class="form-btn" type="reset" name="reset-btn"> Reset </button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

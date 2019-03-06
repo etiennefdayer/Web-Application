@@ -1,0 +1,76 @@
+/*============================================================
+ Toggle Switch Styles source: https://proto.io/freebies/onoff/
+============================================================*/
+
+.onoffswitch {
+  position: relative;
+  width: 84px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+  display: none;
+}
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid rgba(116, 140, 171, 0.5); /* $bermuda-gray, 50% */
+  border-radius: 50px;
+}
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 28px;
+  padding: 0;
+  line-height: 28px;
+  font-size: 0.9rem;
+  color: #F5F5F5; /* $smoke-white */
+  font-family: Catamaran, Arial, sans-serif;
+/*  font-weight: bold;*/
+  box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+  content: "ON";
+  padding-top: 1px;
+  padding-left: 10px;
+  background-color: #1FAD3B; /* $forest-green */
+  color: #F5F5F5; /* $smoke-white */
+}
+.onoffswitch-inner:after {
+  content: "OFF";
+  padding-top: 1px;
+  padding-right: 10px;
+  background-color: #3E5C76; /* $bermuda-gray; */
+  color: #D3D3D3; /* $light-gray */
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 4px;
+  background: #D3D3D3; /* $light-gray */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 52px;
+  border: 2px solid rgba(116, 140, 171, 0.5);
+  border-radius: 50%;
+  transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+  background-color: #F5F5F5; /* $smoke-white */
+}

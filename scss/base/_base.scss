@@ -1,0 +1,79 @@
+// =====
+// Base Style
+// =====
+
+* {
+  margin:0;
+  padding:0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+html {
+  height: 100%;
+}
+
+
+body {
+
+  @extend %font-primary;
+  @include font-settings(1rem,300,$color-text);
+  height: 100%;
+  background-color: $color-nav;
+  overflow-x:hidden;
+}
+
+
+ul {
+  list-style:none;
+}
+
+
+input {
+  @include font-settings(1rem,300,$color-text);
+  border: $border;
+  border-radius: 4px;
+  background-color: $smoke-white;
+  padding: 6px 15px;
+  @extend %transition-state;
+  @extend %focus-state-input;
+}
+
+
+
+input::placeholder {
+  color:$color-text;
+}
+
+
+textarea {
+  @extend input;
+  resize:none;
+}
+
+
+select {
+-webkit-appearance: none;
+@extend input;
+}
+
+
+button {
+  @include font-settings(0.9rem,400,white);
+  border:none;
+  backgroud:none;
+  border-radius: 4px;
+  @extend %transition-state;
+  @extend %focus-state-input;
+}
+
+
+
+.clearfix:after {
+  content: " ";
+  display:table;
+  clear:both;
+}

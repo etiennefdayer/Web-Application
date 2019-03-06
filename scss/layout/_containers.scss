@@ -1,0 +1,168 @@
+
+// ===============
+// Container Styles
+// ===============
+.outer-container {
+  @include display-flex;
+  min-height: 100%;
+
+}
+
+
+
+// ========== Title =============
+
+.title-container {
+  @include display-flex (flex-start, center);
+  height: 64px;
+  padding: 0 $mobile-edge;
+  @include tablet {
+    padding: 0 $tablet-edge;
+  }
+}
+
+
+
+// -----------Alert ------------
+
+.alert-container {
+  @include display-flex (space-between, center);
+  @include font-settings(0.9rem, 100, $color-text-inv-light);
+  background-color: $color-header;
+  border: $border-hdr;
+  border-radius: 4px;
+  padding: 2px 0;
+  margin: 20px $mobile-edge 0;
+  @include tablet {
+    margin: 25px $tablet-edge 0;
+  }
+}
+
+
+
+// -----------Sections -------------
+
+.section-container {
+  border-bottom: $border;
+  padding: 0 $mobile-edge 20px;
+  @include tablet {
+    padding: 0 $tablet-edge 25px;
+  }
+}
+
+
+// -----Bar and Donut Charts --------
+
+
+.supplemental-charts-container {
+  @include charts {
+    @include display-flex(space-around);
+    > div {
+      width: 50% !important;
+      border-right: $border;
+    }
+  }
+}
+
+
+// --------Social Stats ------------
+
+.social-stats-container {
+  padding-bottom: 10px;
+  .inner-social-container {
+    margin-top: 10px;
+    @include mobile {
+      @include display-flex (space-between);
+      flex-wrap:wrap;
+    }
+  }
+}
+
+
+
+.social-container {
+  @include display-flex(flex-start);
+  align-items: center;
+  background-color: $color-tab;
+  border: $border;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 15px;
+  @include mobile {
+    width: 48%;
+  }
+  @include tablet {
+    width: 33%;;
+  }
+}
+
+
+
+// New Members & Recent Activity //
+
+.outer-users-container {
+  @include charts {
+    > div {
+      float:left;
+      width: 50% !important;
+      border-right: $border;
+    }
+  }
+}
+
+
+
+// New Members //
+
+.new-members-container {
+  padding-bottom: 10px;
+}
+
+
+li.member-container {
+  @include display-flex(space-between);
+  align-items: center;
+  padding: 16px 0;
+  &:not(last-child) {
+    border-bottom: $border;
+  }
+}
+
+
+// ------Recent Activity ------------
+
+.recent-activity-container {
+  @extend .new-members-container;
+}
+
+
+// ------Message user & settings ------------
+
+.message-settings-container {
+  @extend .supplemental-charts-container;
+  .settings-container.section-container {
+    border-bottom: none;
+  }
+
+.section-container {
+  @include charts {
+    border-bottom:none;
+  }
+  }
+}
+
+
+
+
+// ------Toggle Switches ------------
+
+.toggle-switch-container {
+  @include display-flex (flex-start, center);
+  margin: 10px 0;
+}
+
+.settings-buttons-container {
+  @include display-flex(space-between);
+  margin-top:auto;
+
+}

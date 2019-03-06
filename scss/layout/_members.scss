@@ -1,0 +1,62 @@
+//================
+// New Members Style
+// ================
+
+.member-image {
+  width: 360px;
+  height: 36px;
+  img {
+    width: 36px;
+    height: 36px;
+    border-radius:50%;
+  }
+}
+
+
+// New Members & Activity //
+
+.member-info {
+  @include font-settings (0.95rem, 500);
+  flew-grow:1;
+  line-height: 1.1rem;
+  margin-left: 10px;
+  @include tablet {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+  > p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+
+.member-email {
+  @include font-settings(0.9rem, 300);
+  @extend .member-posted;
+  color: $color-header;
+
+}
+
+.member-posted {
+  @extend .member-email;
+}
+
+
+
+.member-other {
+  time {
+    @include font-settings(0.95rem,400);
+    margin-left: 10px;
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+  a-activity-arrow {
+    @include icon-link (28px, 28px, 0 -8px 0 0, 0, 0.6);
+  }
+  img.arrow-right {
+    display:inline-block;
+  }
+}

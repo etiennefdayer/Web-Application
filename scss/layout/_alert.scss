@@ -1,0 +1,23 @@
+// =============
+// Alert Styles
+// ============
+
+
+span#alert-tag {
+  font-weight: 500;
+  padding: 0 10px;
+  @include mobile {
+    padding: 0 15px;
+  }
+  @include tablet {
+    font-size: 1rem;
+  }
+}
+
+#alert-message {
+  flex-grow: 1;
+  line-height: 1.2;
+  @include tablet {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,65 @@
+// Font styles
+
+@mixin font-settings($size, $weight, $color: inherit) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+
+
+// Flex display settings
+
+@mixin display-flex($justify: null, $align:null) {
+  display: flex;
+  justify-content: $justify;
+  align-items:$align;
+}
+
+
+// Icon link settings
+@mixin icon-link($width, $height, $margin, $padding, $opacity: 0.5) {
+
+
+display: block;
+width: $width;
+height: $height;
+margin: $margin;
+padding: $padding;
+opacity: $opacity;
+transition: opacity .3s ease-out, transform .4s ease-out;
+&:hover,
+&:focus {
+  opacity: 1;
+  transform: scale(1.1);
+  }
+}
+
+
+
+// Media queries
+
+@mixin mobile {
+  @media (min-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin charts {
+  @media (min-width: #{$charts-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
