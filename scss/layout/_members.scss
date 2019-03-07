@@ -17,7 +17,7 @@
 
 .member-info {
   @include font-settings (0.95rem, 500);
-  flew-grow:1;
+  flex-grow:1;
   line-height: 1.1rem;
   margin-left: 10px;
   @include tablet {
